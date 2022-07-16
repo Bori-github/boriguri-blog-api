@@ -3,17 +3,19 @@
   "description": "Simple hello world sample in Node",
   "version": "1.0.0",
   "private": true,
-  "main": "index.js",
+  "main": "build/src/index.js",
   "scripts": {
-    "gcloud:build": "gcloud builds submit --tag gcr.io/boriguri-blog/boriguri-blog",
-    "gcloud:deploy": "gcloud run deploy --image gcr.io/boriguri-blog/boriguri-blog",
     "lint": "gts lint",
     "clean": "gts clean",
+    "build": "tsc",
     "compile": "tsc",
+    "dev": "nodemon src/index.ts",
     "fix": "gts fix",
     "start": "node build/src/index.js",
     "pretest": "npm run compile",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "gcloud:build": "gcloud builds submit --tag gcr.io/boriguri-blog/boriguri-blog",
+    "gcloud:deploy": "gcloud run deploy --image gcr.io/boriguri-blog/boriguri-blog"
   },
   "engines": {
     "node": ">=16.0.0"

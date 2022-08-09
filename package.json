@@ -15,7 +15,7 @@
     "pretest": "npm run compile",
     "posttest": "npm run lint",
     "gcloud:build": "gcloud builds submit --tag gcr.io/boriguri-blog/boriguri-blog",
-    "gcloud:deploy": "gcloud run deploy --image gcr.io/boriguri-blog/boriguri-blog"
+    "gcloud:deploy": "gcloud run deploy boriguri-blog-api --image gcr.io/boriguri-blog/boriguri-blog"
   },
   "engines": {
     "node": ">=16.0.0"
